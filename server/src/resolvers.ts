@@ -1,4 +1,6 @@
-export const resolvers = {
+import { Resolvers } from "./types";
+
+export const resolvers: Resolvers = {
   Query: {
     // get all tracks, will be used to populate the homepage grid of our web client
     tracksForHome: (_, __, { dataSources }) => {
@@ -7,7 +9,7 @@ export const resolvers = {
   },
   Track: {
     author: ({ authorId }, _, { dataSources }) => {
-      console.log(parent);
+      // console.log(parent);
       return dataSources.trackAPI.getAuthor(authorId);
     },
   },
